@@ -1,0 +1,41 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: rgb(141, 159, 177);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.crossed {
+  text-decoration-line: line-through;
+}
+
+.container {
+  max-width: 70%;
+  margin: auto;
+  padding: 1rem;
+  text-align: center;
+
+}
+
+ul {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+li {
+  list-style: none;
+}
+
+h1 {
+  padding-bottom: 2rem;
+  font-size: 50px;
+}
+
+span {
+  font-size: medium;
+}
