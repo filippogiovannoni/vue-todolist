@@ -62,6 +62,9 @@ export default {
         done: false
       }
 
+    },
+    toggleDone(todo) {
+      todo.done = !todo.done
     }
   }
 }
@@ -74,8 +77,8 @@ export default {
     <button type="submit" @click="addTodo()">Add</button>
     <ul v-if="todolist.length > 0">
       <li v-for="(todo, index) in todolist">
-        <span v-if="todo.done" :class="crossed">{{ todo.text }}</span>
-        <span v-else>{{ todo.text }}</span>
+        <span @click="toggleDone(todo)" v-if="todo.done" :class="crossed">{{ todo.text }}</span>
+        <span @click="toggleDone(todo)" v-else>{{ todo.text }}</span>
         <div @click="removeTodo(index)">
           <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-x-octagon"
             viewBox="0 0 16 16">
