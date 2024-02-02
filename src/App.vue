@@ -70,7 +70,7 @@ export default {
 <template>
   <div class="container">
     <h1>Todolist</h1>
-    <input type="text" name="todoInput" id="todoInput" v-model="newTodo.text">
+    <input type="text" name="todoInput" id="todoInput" v-model="newTodo.text" @keyup.enter="addTodo()">
     <button type="submit" @click="addTodo()">Add</button>
     <ul v-if="todolist.length > 0">
       <li v-for="(todo, index) in todolist">
