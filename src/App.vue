@@ -37,7 +37,11 @@ export default {
           done: true
         },
       ],
-      crossed: 'crossed'
+      crossed: 'crossed',
+      newTodo: {
+        text: '',
+        done: false
+      }
     }
   },
   methods: {
@@ -45,6 +49,19 @@ export default {
       console.log('cliccato', index);
       this.todolist.splice(index, 1)
       console.log(this.todolist.length);
+    },
+    addTodo() {
+      console.log(this.newTodo);
+
+      this.todolist.unshift(this.newTodo)
+
+      console.log(this.todolist);
+
+      this.newTodo = {
+        text: '',
+        done: false
+      }
+
     }
   }
 }
@@ -53,6 +70,8 @@ export default {
 <template>
   <div class="container">
     <h1>Todolist</h1>
+    <input type="text" name="todoInput" id="todoInput" v-model="newTodo.text">
+    <button type="submit" @click="addTodo()">Add</button>
     <ul v-if="todolist.length > 0">
       <li v-for="(todo, index) in todolist">
         <span v-if="todo.done" :class="crossed">{{ todo.text }}</span>
